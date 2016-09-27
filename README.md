@@ -8,8 +8,8 @@
 
     1>.index.js 文件里面配置 aliGetWaySign 的请求参数
 
-        `
-        var headers = {
+        ```
+           var headers = {
                 'Method' : 'post',
                 'Path' : '/login',
                 'Form' : {
@@ -18,7 +18,8 @@
 
                 }
             };
-        `
+```
+
         Method, Path 这两个参数名称最好不要更改，如果需要传参数给 api， 你需要传递 Form，格式如上，需要签名。
 
     2>.配置 request 的参数
