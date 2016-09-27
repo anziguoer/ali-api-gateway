@@ -22,10 +22,6 @@
 
     2>.配置 request 的参数
 
-        Method, Path 这两个参数名称最好不要更改，如果需要传参数给 api， 你需要传递 Form，格式如上，需要签名。
-
-    2>.配置 request 的参数
-
         var options = {
             url : url,
             form:{account:'18611439826', password:'111111'}
