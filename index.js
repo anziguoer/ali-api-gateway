@@ -6,35 +6,23 @@
 * @Last Modified time: 2016-09-27 16:40:26
 * @Descrition : 阿里云 api 网关测试
 */
-
 var request = require('request');
 var aliGetWaySign = require('./ali_gateway_sign');
-var url = 'http://localhost/login';
-// 定义阿里请求的 headers，如下的参数为固定参数，大小写不能变
-var headers = {
-        'Method' : 'post',
-        'Path' : '/login',
-        'Form' : {
-            password:'111111',
-            account:'18611439826',
 
-        }
-    };
-// 定义 request 的请求参数
-var options = {
-    url : url,
-    form:{account:'18611439826', password:'111111'}
-};
+var requestParams = aliGetWaySign({
+    Method : 'post|get',
+    Url : 'http://localhost/path',
+    // 参数， 如果有则配置， 没有则不配置
+    Form : {
+        mabile : '12341234',
+        password : 'asdfasdfadf'
+    }
+});
 
-/**
- * 执行api请求
- * @param  {[type]} error            [description]
- * @param  {[type]} requestParams){                 options.headers [description]
- * @return {[type]}                  [description]
- */
-aliGetWaySign(headers, function(error, requestParams){
-    options.headers = requestParams;
-    request.post(options, function(e, r, b){
-        console.log(b);
-    });
+
+
+// 使用 node request模块发送请求
+request(requestParams, function(error, response, body){
+    // 如果没有问题， 则 body 为服务器返回的数据
+    console.log(body);
 });
