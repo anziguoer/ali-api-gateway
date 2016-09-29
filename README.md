@@ -29,7 +29,10 @@
         {
             method: 'get',
             url: 'http://localhost/path',
-            form: { token: 'kanj46vbijdlwa98b6d02f3fff8e2a3d9df47c25c0651' },
+            form: {
+                mabile : '12341234',
+                password : 'asdfasdfadf'
+             },
             headers:
                 {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
